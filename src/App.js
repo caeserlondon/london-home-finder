@@ -5,11 +5,13 @@ import Login from './pages/LogIn'
 import Offers from './pages/Offers'
 import Profile from './pages/Profile'
 import SignUp from './pages/SignUp'
+import Navbar from './components/Navbar'
 
 function App() {
 	return (
 		<>
 			<Router>
+				<Navbar />
 				<Routes>
 					<Route path='/' element={<Explore />} />
 					<Route path='/offers' element={<Offers />} />
