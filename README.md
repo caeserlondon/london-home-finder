@@ -1,5 +1,17 @@
 # Mobile First Real Estate Application.
 
+### React V18.2.0
+
+https://reactjs.org/docs/getting-started.html
+
+### React Router V6.3.0
+
+https://reactrouter.com/docs/en/v6/getting-started/overview
+
+### Firebase V9.8.3
+
+https://firebase.google.com/docs/build
+
 ---
 
 # Getting Started with Create React App
