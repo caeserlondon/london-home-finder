@@ -7,6 +7,7 @@ import Login from './pages/LogIn'
 import Offers from './pages/Offers'
 import Profile from './pages/Profile'
 import SignUp from './pages/SignUp'
+import Category from './pages/Category'
 import Navbar from './components/Navbar'
 import PrivateRoute from './components/PrivateRoute'
 
@@ -17,6 +18,7 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route path='/' element={<Explore />} />
+					<Route path='/category/:categotyName' element={<Category />} />
 					<Route path='/offers' element={<Offers />} />
 					<Route path='/profile' element={<PrivateRoute />}>
 						<Route path='/profile' element={<Profile />} />
