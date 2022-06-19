@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import { useNavigate, Link } from 'react-router-dom'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
@@ -39,7 +40,7 @@ const LogIn = () => {
 				navigate('/')
 			}
 		} catch (error) {
-			console.log(error)
+			toast.warn('Bad User Name or Password')
 		}
 	}
 

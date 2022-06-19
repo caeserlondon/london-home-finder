@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import { useNavigate, Link } from 'react-router-dom'
 import {
 	getAuth,
@@ -56,7 +57,7 @@ const SignUp = () => {
 
 			navigate('/')
 		} catch (error) {
-			console.log(error)
+			toast.warn('Bad User Name or Password')
 		}
 	}
 
@@ -86,7 +87,7 @@ const SignUp = () => {
 					<div className='passwordInputDiv'>
 						<input
 							type={showPassword ? 'text' : 'password'}
-							placeholder='Password'
+							placeholder='Password (6+ characters)'
 							onChange={onChange}
 							className='passwordInput'
 							id='password'
