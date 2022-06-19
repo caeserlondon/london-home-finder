@@ -10,6 +10,7 @@ import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config.js'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
+import OAuth from '../components/OAuth.jsx'
 
 const SignUp = () => {
 	const [showPassword, setShowPassword] = useState(false)
@@ -115,6 +116,8 @@ const SignUp = () => {
 						</button>
 					</div>
 				</form>
+
+				<OAuth />
 
 				<Link to='/log-in' className='registerLink'>
 					Already registered ? Log In Instead
