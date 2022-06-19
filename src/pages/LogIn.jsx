@@ -58,6 +58,7 @@ const LogIn = () => {
 						className='emailInput'
 						value={email}
 						onChange={onChange}
+						autoComplete='current-email'
 					/>
 					<div className='passwordInputDiv'>
 						<input
@@ -67,6 +68,7 @@ const LogIn = () => {
 							className='passwordInput'
 							id='password'
 							value={password}
+							autoComplete='current-password'
 						/>
 						<img
 							src={visibilityIcon}
