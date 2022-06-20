@@ -30,7 +30,7 @@ const OAuth = () => {
 			}
 			navigate('/')
 		} catch (error) {
-			toast.warn('Could not authorize with Google')
+			toast.error('Could not authorize with Google')
 		}
 	}
 
