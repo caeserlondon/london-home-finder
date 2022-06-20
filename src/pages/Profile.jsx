@@ -38,7 +38,7 @@ const Profile = () => {
 				})
 			}
 		} catch (error) {
-			toast.warn('Could not update profile')
+			toast.error('Could not update profile')
 		}
 	}
 
