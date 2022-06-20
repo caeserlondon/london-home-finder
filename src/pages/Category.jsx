@@ -12,6 +12,7 @@ import {
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner'
+import ListingItem from '../components/ListingItem'
 
 const Category = () => {
 	const [listings, setListings] = useState(null)
@@ -19,6 +20,8 @@ const Category = () => {
 	const [loading, setLoading] = useState(true)
 
 	const params = useParams()
+
+	const onDelete = () => {}
 
 	useEffect(() => {
 		const fetchListings = async () => {
@@ -79,7 +82,12 @@ const Category = () => {
 					<main>
 						<ul className='categoryListings'>
 							{listings.map((listing) => (
-								<h3 key={listing.id}>{listing.data.name}</h3>
+								<ListingItem
+									key={listing.id}
+									id={listing.id}
+									listing={listing.data}
+									onDelete={onDelete}
+								/>
 							))}
 						</ul>
 					</main>
