@@ -41,7 +41,7 @@ const LogIn = () => {
 				navigate('/')
 			}
 		} catch (error) {
-			toast.warn('Bad User Name or Password')
+			toast.error('Bad User Name or Password')
 		}
 	}
 
