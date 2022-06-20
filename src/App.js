@@ -18,7 +18,7 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route path='/' element={<Explore />} />
-					<Route path='/category/:categotyName' element={<Category />} />
+					<Route path='/category/:categoryName' element={<Category />} />
 					<Route path='/offers' element={<Offers />} />
 					<Route path='/profile' element={<PrivateRoute />}>
 						<Route path='/profile' element={<Profile />} />
