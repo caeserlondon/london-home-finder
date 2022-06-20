@@ -16,10 +16,10 @@ const ForgotPassword = () => {
 
 			await sendPasswordResetEmail(auth, email)
 
-			toast.warn('Please check your email for a password reset link!')
-			toast.warn('please check your spam or junk mail folder')
+			toast.warn('Email was sent')
+			toast.warn('Please check your spam or junk mail folder')
 		} catch (error) {
-			toast.warn('Error sending email!')
+			toast.error('Error sending email!')
 		}
 	}
 
