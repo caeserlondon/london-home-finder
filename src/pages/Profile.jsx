@@ -69,7 +69,7 @@ const Profile = () => {
 							setChangeDetails((prevState) => !prevState)
 						}}
 					>
-						{changeDetails ? 'done' : 'change'}
+						{changeDetails ? 'done' : 'change user name'}
 					</p>
 				</div>
 				<div className='profileCard'>
