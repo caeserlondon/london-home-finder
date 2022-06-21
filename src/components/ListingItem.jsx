@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ReactComponent as DeleteIcon } from '../assets/svg/deleteIcon.svg'
 import bedIcon from '../assets/svg/bedIcon.svg'
 import bathtubIcon from '../assets/svg/bathtubIcon.svg'
+import areaIcon from '../assets/svg/areaIcon.svg'
 
 const ListingItem = ({ listing, id, onDelete }) => {
 	return (
@@ -42,6 +43,8 @@ const ListingItem = ({ listing, id, onDelete }) => {
 								? `${listing.bathrooms} Bathrooms`
 								: '1 Bathroom'}
 						</p>
+						<img src={areaIcon} alt='area' />
+						<p className='categoryListingInfoText'>{`${listing.sqft} Sq.ft`}</p>
 					</div>
 				</div>
 			</Link>
