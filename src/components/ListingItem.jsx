@@ -28,7 +28,7 @@ const ListingItem = ({ listing, id, onDelete }) => {
 							: listing.regularPrice
 									.toString()
 									.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-						{listing.type === 'rent' && 'per calendar month'}
+						{listing.type === 'rent' && ' per calendar month'}
 					</p>
 					<div className='categoryListingInfoDiv'>
 						<img src={bedIcon} alt='bedrooms' />
