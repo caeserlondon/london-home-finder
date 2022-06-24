@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import {
 	collection,
 	getDocs,
@@ -20,8 +19,6 @@ const Offers = () => {
 	const [loading, setLoading] = useState(true)
 
 	const [lastFetchedListing, setLastFetchedListing] = useState(null)
-
-	const params = useParams()
 
 	const onDelete = () => {}
 
