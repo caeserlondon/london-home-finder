@@ -1,5 +1,8 @@
 # London Home Finder
 
+For listings rents and sales. using Firebase database
+to store data and images and using Google authentication.
+
 ### Mobile First Real Estate Application.
 
 ### React V18.2.0
