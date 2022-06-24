@@ -55,6 +55,7 @@ const ListingItem = ({ listing, id, onDelete, onEdit }) => {
 					className='removeIcon'
 				/>
 			)}
+
 			{onEdit && <EditIcon className='editIcon' onClick={() => onEdit(id)} />}
 		</li>
 	)
