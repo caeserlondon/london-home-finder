@@ -13,6 +13,7 @@ import Listing from './pages/Listing'
 import Contact from './pages/contact'
 import EditListing from './pages/EditListing'
 import About from './pages/About'
+import Error from './pages/Error'
 import Navbar from './components/Navbar'
 import PrivateRoute from './components/PrivateRoute'
 
@@ -39,6 +40,7 @@ function App() {
 						path='/category/:categoryName/:listingId'
 						element={<Listing />}
 					/>
+					<Route path='*' element={<Error />} />
 				</Routes>
 			</Router>
 			<ToastContainer />
