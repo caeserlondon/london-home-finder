@@ -1,11 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 
-## !CAESER 
-# TODO: Remove this when done.
-src/assets
 src/firebase.config.js
-src/index.css
+
 
 
 
