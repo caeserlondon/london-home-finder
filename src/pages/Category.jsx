@@ -109,41 +109,43 @@ const Category = () => {
 	}
 
 	return (
-		<div className='category'>
-			<header>
-				<p className='pageHeader'>
-					{params.categoryName === 'sale'
-						? 'Places for sale'
-						: 'Places for rent'}
-				</p>
-			</header>
-			{loading ? (
-				<Spinner />
-			) : listings && listings.length > 0 ? (
-				<>
-					<main>
-						<ul className='categoryListings'>
-							{listings.map((listing) => (
-								<ListingItem
-									key={listing.id}
-									id={listing.id}
-									listing={listing.data}
-									onDelete={onDelete}
-								/>
-							))}
-						</ul>
-					</main>
+		<div className='mainContainer'>
+			<div className='category'>
+				<header>
+					<p className='pageHeader'>
+						{params.categoryName === 'sale'
+							? 'Places for sale'
+							: 'Places for rent'}
+					</p>
+				</header>
+				{loading ? (
+					<Spinner />
+				) : listings && listings.length > 0 ? (
+					<div>
+						<main>
+							<ul className='categoryListings'>
+								{listings.map((listing) => (
+									<ListingItem
+										key={listing.id}
+										id={listing.id}
+										listing={listing.data}
+										onDelete={onDelete}
+									/>
+								))}
+							</ul>
+						</main>
 
-					<br />
-					{lastFetchedListing && (
-						<p className='loadMore' onClick={onFetchMoreListings}>
-							Load More
-						</p>
-					)}
-				</>
-			) : (
-				<h2>No listings for {params.categoryName}</h2>
-			)}
+						<br />
+						{lastFetchedListing && (
+							<p className='loadMore' onClick={onFetchMoreListings}>
+								Load More
+							</p>
+						)}
+					</div>
+				) : (
+					<h2>No listings for {params.categoryName}</h2>
+				)}
+			</div>
 		</div>
 	)
 }
