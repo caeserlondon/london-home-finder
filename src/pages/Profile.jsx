@@ -106,69 +106,73 @@ const Profile = () => {
 	const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`)
 
 	return (
-		<div className='profile'>
-			<header className='profileHeader'>
-				<p className='pageHeader'>My Profile</p>
-				<button className='logOut' type='button' onClick={onLogOut}>
-					Log Out
-				</button>
-			</header>
-			<main>
-				<div className='profileDetailsHeader'>
-					<p className='profileDetailsText'>Personal Details</p>
-					<p
-						className='changePersonalDetails'
-						onClick={() => {
-							changeDetails && onSubmit()
-							setChangeDetails((prevState) => !prevState)
-						}}
-					>
-						{changeDetails ? 'done' : 'change user name'}
-					</p>
-				</div>
-				<div className='profileCard'>
-					<form>
-						<input
-							type='text'
-							id='name'
-							className={changeDetails ? 'profileNameActive' : 'profileName'}
-							disabled={!changeDetails}
-							value={name}
-							onChange={onChange}
-						/>
-						<input
-							type='text'
-							id='email'
-							className={changeDetails ? 'profileEmailActive' : 'profileEmail'}
-							disabled={!changeDetails}
-							value={email}
-							onChange={onChange}
-						/>
-					</form>
-				</div>
-				<Link to='/create-listing' className='createListing'>
-					<img src={homeIcon} alt='home' />
-					<p>Sell or rent your property</p>
-					<img src={arrowRight} alt='go' />
-				</Link>
+		<div className='mainContainer'>
+			<div className='profile'>
+				<header className='profileHeader'>
+					<p className='pageHeader'>My Profile</p>
+					<button className='logOut' type='button' onClick={onLogOut}>
+						Log Out
+					</button>
+				</header>
+				<main>
+					<div className='profileDetailsHeader'>
+						<p className='profileDetailsText'>Personal Details</p>
+						<p
+							className='changePersonalDetails'
+							onClick={() => {
+								changeDetails && onSubmit()
+								setChangeDetails((prevState) => !prevState)
+							}}
+						>
+							{changeDetails ? 'done' : 'change user name'}
+						</p>
+					</div>
+					<div className='profileCard'>
+						<form>
+							<input
+								type='text'
+								id='name'
+								className={changeDetails ? 'profileNameActive' : 'profileName'}
+								disabled={!changeDetails}
+								value={name}
+								onChange={onChange}
+							/>
+							<input
+								type='text'
+								id='email'
+								className={
+									changeDetails ? 'profileEmailActive' : 'profileEmail'
+								}
+								disabled={!changeDetails}
+								value={email}
+								onChange={onChange}
+							/>
+						</form>
+					</div>
+					<Link to='/create-listing' className='createListing'>
+						<img src={homeIcon} alt='home' />
+						<p>Sell or rent your property</p>
+						<img src={arrowRight} alt='go' />
+					</Link>
 
-				{!loading && listings?.length > 0 && (
-					<>
-						<p className='listingText'>Your Listings</p>
-						<ul className='listingsList'>
-							{listings.map((listing) => (
-								<ListingItem
-									key={listing.id}
-									listing={listing.data}
-									id={listing.id}
-									onDelete={() => onDelete(listing.id)}
-									onEdit={() => onEdit(listing.id)}
-								/>
-							))}
-						</ul>
-					</>
-				)}
-			</main>
+					{!loading && listings?.length > 0 && (
+						<>
+							<p className='listingText'>Your Listings</p>
+							<ul className='listingsList'>
+								{listings.map((listing) => (
+									<ListingItem
+										key={listing.id}
+										listing={listing.data}
+										id={listing.id}
+										onDelete={() => onDelete(listing.id)}
+										onEdit={() => onEdit(listing.id)}
+									/>
+								))}
+							</ul>
+						</>
+					)}
+				</main>
+			</div>
 		</div>
 	)
 }
