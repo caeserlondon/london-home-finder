@@ -64,64 +64,66 @@ const SignUp = () => {
 
 	return (
 		<>
-			<div className='pageContainer'>
-				<header>
-					<p className='pageHeader'>London Home Finder</p>
-				</header>
-				<form onSubmit={onSubmit}>
-					<input
-						type='text'
-						id='name'
-						placeholder='Name'
-						className='nameInput'
-						value={name}
-						onChange={onChange}
-						autoComplete='current-username'
-					/>
-					<input
-						type='email'
-						id='email'
-						placeholder='Email'
-						className='emailInput'
-						value={email}
-						onChange={onChange}
-						autoComplete='current-email'
-					/>
-					<div className='passwordInputDiv'>
+			<div className='mainContainer'>
+				<div className='pageContainer'>
+					<header>
+						<p className='pageHeader'>London Home Finder</p>
+					</header>
+					<form onSubmit={onSubmit}>
 						<input
-							type={showPassword ? 'text' : 'password'}
-							placeholder='Password (6+ characters)'
+							type='text'
+							id='name'
+							placeholder='Name'
+							className='nameInput'
+							value={name}
 							onChange={onChange}
-							className='passwordInput'
-							id='password'
-							value={password}
-							autoComplete='current-password'
+							autoComplete='current-username'
 						/>
-						<img
-							src={visibilityIcon}
-							alt='visibility'
-							className='showPassword'
-							onClick={() => setShowPassword((prevState) => !prevState)}
+						<input
+							type='email'
+							id='email'
+							placeholder='Email'
+							className='emailInput'
+							value={email}
+							onChange={onChange}
+							autoComplete='current-email'
 						/>
-					</div>
-					<Link to='/forgot-password' className='forgotPasswordLink'>
-						Forgot Password ?
+						<div className='passwordInputDiv'>
+							<input
+								type={showPassword ? 'text' : 'password'}
+								placeholder='Password (6+ characters)'
+								onChange={onChange}
+								className='passwordInput'
+								id='password'
+								value={password}
+								autoComplete='current-password'
+							/>
+							<img
+								src={visibilityIcon}
+								alt='visibility'
+								className='showPassword'
+								onClick={() => setShowPassword((prevState) => !prevState)}
+							/>
+						</div>
+						<Link to='/forgot-password' className='forgotPasswordLink'>
+							Forgot Password ?
+						</Link>
+
+						<div className='signUpBar'>
+							<p className='signUpText'>Sign Up</p>
+
+							<button className='signUpButton'>
+								<ArrowRightIcon className='arrowRightIcon' />
+							</button>
+						</div>
+					</form>
+
+					<OAuth />
+
+					<Link to='/log-in' className='registerLink'>
+						Already registered ? Log In Instead
 					</Link>
-
-					<div className='signUpBar'>
-						<p className='signUpText'>Sign Up</p>
-
-						<button className='signUpButton'>
-							<ArrowRightIcon className='arrowRightIcon' />
-						</button>
-					</div>
-				</form>
-
-				<OAuth />
-
-				<Link to='/log-in' className='registerLink'>
-					Already registered ? Log In Instead
-				</Link>
+				</div>
 			</div>
 		</>
 	)
