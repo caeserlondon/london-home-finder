@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { useNavigate, Link } from 'react-router-dom'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import OAuth from '../components/OAuth'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
-import OAuth from '../components/OAuth'
 
 const LogIn = () => {
 	const [showPassword, setShowPassword] = useState(false)
