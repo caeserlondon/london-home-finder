@@ -19,6 +19,7 @@ const Explore = () => {
 							<img
 								src={rentCategoryImage}
 								alt='rent'
+								// className='exploreCategoryImg'
 								className='exploreCategoryImg'
 							/>
 							<p className='exploreCategoryName'>Places for rent</p>
