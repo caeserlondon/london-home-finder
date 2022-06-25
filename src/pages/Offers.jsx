@@ -20,8 +20,6 @@ const Offers = () => {
 
 	const [lastFetchedListing, setLastFetchedListing] = useState(null)
 
-	const onDelete = () => {}
-
 	useEffect(() => {
 		const fetchListings = async () => {
 			try {
@@ -106,37 +104,38 @@ const Offers = () => {
 	}
 
 	return (
-		<div className='category'>
-			<header>
-				<p className='pageHeader'>Offers</p>
-			</header>
-			{loading ? (
-				<Spinner />
-			) : listings && listings.length > 0 ? (
-				<>
-					<main>
-						<ul className='categoryListings'>
-							{listings.map((listing) => (
-								<ListingItem
-									key={listing.id}
-									id={listing.id}
-									listing={listing.data}
-									onDelete={onDelete}
-								/>
-							))}
-						</ul>
-					</main>
-					<br />
-					<br />
-					{lastFetchedListing && (
-						<p className='loadMore' onClick={onFetchMoreListings}>
-							Load More
-						</p>
-					)}
-				</>
-			) : (
-				<h2>There are no current offers</h2>
-			)}
+		<div className='mainContainer'>
+			<div className='category'>
+				<header>
+					<p className='pageHeader'>Offers</p>
+				</header>
+				{loading ? (
+					<Spinner />
+				) : listings && listings.length > 0 ? (
+					<div>
+						<main>
+							<ul className='categoryListings'>
+								{listings.map((listing) => (
+									<ListingItem
+										key={listing.id}
+										id={listing.id}
+										listing={listing.data}
+									/>
+								))}
+							</ul>
+						</main>
+						<br />
+						<br />
+						{lastFetchedListing && (
+							<p className='loadMore' onClick={onFetchMoreListings}>
+								Load More
+							</p>
+						)}
+					</div>
+				) : (
+					<h2>There are no current offers</h2>
+				)}
+			</div>
 		</div>
 	)
 }
