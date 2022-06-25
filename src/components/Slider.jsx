@@ -63,7 +63,7 @@ function Slider() {
 							<img
 								src={data.imgUrls[0]}
 								alt=''
-								className='exploreCategoryImg'
+								className='splideSlideImg'
 								onClick={() => navigate(`/category/${data.type}/${id}`)}
 							/>
 
