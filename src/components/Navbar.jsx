@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { ReactComponent as ExploreIcon } from '../assets/svg/exploreIcon.svg'
 import { ReactComponent as OfferIcon } from '../assets/svg/localOfferIcon.svg'
 import { ReactComponent as PersonOutLineIcon } from '../assets/svg/personOutlineIcon.svg'
+import { ReactComponent as AboutIcon } from '../assets/svg/aboutIcon.svg'
 
 const Navbar = () => {
 	let navigate = useNavigate()
@@ -33,7 +34,7 @@ const Navbar = () => {
 									: 'navbarListItemName'
 							}
 						>
-							Explore
+							Home
 						</p>
 					</li>
 					<li className='navbarListItem' onClick={() => navigate('/offers')}>
@@ -53,6 +54,25 @@ const Navbar = () => {
 							}
 						>
 							Offers
+						</p>
+					</li>
+					<li className='navbarListItem' onClick={() => navigate('/about')}>
+						<AboutIcon
+							className='aboutIcon'
+							fill={
+								pathMatchRoute('/about')
+									? 'var(--primary-color)'
+									: 'var(--secondary-color)'
+							}
+						/>
+						<p
+							className={
+								pathMatchRoute('/about')
+									? 'navbarListItemNameActive'
+									: 'navbarListItemName'
+							}
+						>
+							About
 						</p>
 					</li>
 					<li className='navbarListItem' onClick={() => navigate('/profile')}>
