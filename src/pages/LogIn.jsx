@@ -47,55 +47,57 @@ const LogIn = () => {
 
 	return (
 		<>
-			<div className='pageContainer'>
-				<header>
-					<p className='pageHeader'>Welcome back!</p>
-				</header>
-				<form onSubmit={onSubmit}>
-					<input
-						type='email'
-						id='email'
-						placeholder='Email'
-						className='emailInput'
-						value={email}
-						onChange={onChange}
-						autoComplete='current-email'
-					/>
-					<div className='passwordInputDiv'>
+			<div className='mainContainer'>
+				<div className='pageContainer'>
+					<header>
+						<p className='pageHeader'>Welcome back!</p>
+					</header>
+					<form onSubmit={onSubmit}>
 						<input
-							type={showPassword ? 'text' : 'password'}
-							placeholder='Password'
+							type='email'
+							id='email'
+							placeholder='Email'
+							className='emailInput'
+							value={email}
 							onChange={onChange}
-							className='passwordInput'
-							id='password'
-							value={password}
-							autoComplete='current-password'
+							autoComplete='current-email'
 						/>
-						<img
-							src={visibilityIcon}
-							alt='visibility'
-							className='showPassword'
-							onClick={() => setShowPassword((prevState) => !prevState)}
-						/>
-					</div>
-					<Link to='/forgot-password' className='forgotPasswordLink'>
-						Forgot Password ?
+						<div className='passwordInputDiv'>
+							<input
+								type={showPassword ? 'text' : 'password'}
+								placeholder='Password'
+								onChange={onChange}
+								className='passwordInput'
+								id='password'
+								value={password}
+								autoComplete='current-password'
+							/>
+							<img
+								src={visibilityIcon}
+								alt='visibility'
+								className='showPassword'
+								onClick={() => setShowPassword((prevState) => !prevState)}
+							/>
+						</div>
+						<Link to='/forgot-password' className='forgotPasswordLink'>
+							Forgot Password ?
+						</Link>
+
+						<div className='signInBar'>
+							<p className='signInText'>Log In</p>
+
+							<button className='signInButton'>
+								<ArrowRightIcon className='arrowRightIcon' />
+							</button>
+						</div>
+					</form>
+
+					<OAuth />
+
+					<Link to='/sign-up' className='registerLink'>
+						Don't have an account yet ? Sign Up
 					</Link>
-
-					<div className='signInBar'>
-						<p className='signInText'>Log In</p>
-
-						<button className='signInButton'>
-							<ArrowRightIcon className='arrowRightIcon' />
-						</button>
-					</div>
-				</form>
-
-				<OAuth />
-
-				<Link to='/sign-up' className='registerLink'>
-					Don't have an account yet ? Sign Up
-				</Link>
+				</div>
 			</div>
 		</>
 	)
