@@ -24,33 +24,35 @@ const ForgotPassword = () => {
 	}
 
 	return (
-		<div className='pageContainer'>
-			<header>
-				<p className='pageHeader'>Forgot Password</p>
-			</header>
-			<main>
-				<form onSubmit={onSubmit}>
-					<input
-						type='email'
-						placeholder='Email '
-						className='emailInput'
-						autoComplete='current-email'
-						value={email}
-						id='email'
-						onChange={onChange}
-					/>
-					<Link to='/log-in' className='forgotPasswordLink'>
-						Log In
-					</Link>
-					<div className='signInBar'>
-						<div className='signInText'>Send Reset Email</div>
-						<p>please check your spam or junk mail folder</p>
-						<button className='signInButton'>
-							<ArrowRightIcon className='arrowRightIcon' />
-						</button>
-					</div>
-				</form>
-			</main>
+		<div className='mainContainer'>
+			<div className='pageContainer'>
+				<header>
+					<p className='pageHeader'>Forgot Password</p>
+				</header>
+				<main>
+					<form onSubmit={onSubmit}>
+						<input
+							type='email'
+							placeholder='Email '
+							className='emailInput'
+							autoComplete='current-email'
+							value={email}
+							id='email'
+							onChange={onChange}
+						/>
+						<Link to='/log-in' className='forgotPasswordLink'>
+							Log In
+						</Link>
+						<div className='signInBar'>
+							<div className='signInText'>Send Reset Email</div>
+							<p>please check your spam or junk mail folder</p>
+							<button className='signInButton'>
+								<ArrowRightIcon className='arrowRightIcon' />
+							</button>
+						</div>
+					</form>
+				</main>
+			</div>
 		</div>
 	)
 }
