@@ -32,8 +32,8 @@ const About = () => {
 					fair-dealing / fair-use copyright laws.
 				</p>
 
+				<h3>Fair dealing in United Kingdom law:</h3>
 				<p>
-					<h3>Fair dealing in United Kingdom law:</h3>
 					Under the Copyright, Designs and Patents Act 1988 (CDPA), fair dealing
 					is limited to the following purposes: research and private study (both
 					must be non-commercial), criticism / review / quotation, and news
@@ -47,8 +47,8 @@ const About = () => {
 					work, where the copies are made by the researcher or student himself.
 				</p>
 
+				<h3>Fair use in the Common law:</h3>
 				<p>
-					<h3>Fair use in the Common law:</h3>
 					Fair use is a doctrine in law that permits limited use of copyrighted
 					material without having to first acquire permission from the copyright
 					holder. Fair use is one of the limitations to copyright intended to
@@ -66,8 +66,9 @@ const About = () => {
 					being too rigidly applied and "stifling the very creativity which
 					[copyright] law is designed to foster.
 				</p>
+
+				<h3>For further information you can visit</h3>
 				<p>
-					<h3>For further information you can visit</h3>
 					<a
 						href='https://www.gov.uk/guidance/exceptions-to-copyright'
 						target='_blank'
