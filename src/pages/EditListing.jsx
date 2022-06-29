@@ -493,7 +493,7 @@ const EditListing = () => {
 							multiple
 							required
 						/>
-						<button type='submit' className='primaryButton createListingButton'>
+						<button type='submit' className='primaryCreateListingButton'>
 							Edit Listing
 						</button>
 					</form>
