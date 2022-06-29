@@ -116,6 +116,8 @@ function Listing() {
 									? `${listing.bathrooms} Bathrooms`
 									: '1 Bathroom'}
 							</li>
+							<li>{`${listing.sqft} Square feet`}</li>
+
 							<li>{listing.parking && 'Parking Spot'}</li>
 							<li>{listing.furnished && 'Furnished'}</li>
 						</ul>
