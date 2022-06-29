@@ -23,8 +23,6 @@ const Category = () => {
 
 	const [lastFetchedListing, setLastFetchedListing] = useState(null)
 
-	const onDelete = () => {}
-
 	useEffect(() => {
 		const fetchListings = async () => {
 			try {
@@ -129,7 +127,6 @@ const Category = () => {
 										key={listing.id}
 										id={listing.id}
 										listing={listing.data}
-										onDelete={onDelete}
 									/>
 								))}
 							</ul>
