@@ -64,7 +64,7 @@ const Profile = () => {
 
 	const onLogOut = () => {
 		auth.signOut()
-		navigate('/')
+		navigate('/log-in')
 	}
 
 	const onSubmit = async () => {
@@ -107,7 +107,7 @@ const Profile = () => {
 
 	return (
 		<div className='mainContainer'>
-			<div className='profile'>
+			<div className='profile profileContainer'>
 				<header className='profileHeader'>
 					<p className='pageHeader'>My Profile</p>
 					<button className='logOut' type='button' onClick={onLogOut}>
