@@ -15,7 +15,7 @@ function Slider() {
 	useEffect(() => {
 		const fetchListings = async () => {
 			const listingsRef = collection(db, 'listings')
-			const q = query(listingsRef, orderBy('timestamp', 'desc'), limit(6))
+			const q = query(listingsRef, orderBy('timestamp', 'desc'), limit(30))
 			const querySnap = await getDocs(q)
 
 			let listings = []
@@ -45,7 +45,9 @@ function Slider() {
 	return (
 		listings && (
 			<>
-				<p className='exploreHeading'>Our Most Recent Properties</p>
+				<p className='exploreHeading'>
+					Search properties for sale and to rent in London
+				</p>
 				<Splide
 					options={{
 						perPage: 3,
