@@ -6,6 +6,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
 
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -39,6 +48,9 @@ a {
 	display: block;
 	color: var(--secondary-color);
 }
+/* a:hover {
+	color: var(--dark-text);
+} */
 
 h3 {
 	color: var(--primary-color);
@@ -77,15 +89,6 @@ button {
 	padding: 0 3rem;
 	font-size: 1rem;
 }
-@media (min-width: 1100px) {
-	.input,
-	.passwordInput,
-	.emailInput,
-	.nameInput,
-	.textarea {
-		padding: 0 5rem;
-	}
-}
 
 .textarea {
 	padding: 1rem 1.5rem;
@@ -119,15 +122,6 @@ button {
 .explore {
 	margin: 1rem;
 }
-@media (min-width: 1024px) {
-	.pageContainer,
-	.offers,
-	.listingDetails,
-	.category,
-	.explore {
-		margin: 3rem;
-	}
-}
 
 .loadingSpinnerContainer {
 	position: fixed;
@@ -150,14 +144,6 @@ button {
 		transparent;
 	border-radius: 50%;
 	animation: spin 1.2s linear infinite;
-}
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 .pageHeader {
@@ -269,13 +255,6 @@ button {
 	cursor: pointer;
 }
 
-@media (min-width: 1024px) {
-	.signInBar,
-	.signUpBar {
-		justify-content: start;
-	}
-}
-
 .signInText,
 .signUpText {
 	font-size: 1.5rem;
@@ -291,12 +270,6 @@ button {
 	height: 3rem;
 	background-color: var(--primary-color);
 	border-radius: 50%;
-}
-@media (min-width: 1024px) {
-	.signInButton,
-	.signUpButton {
-		margin-left: 3rem;
-	}
 }
 
 .socialLogin {
@@ -330,17 +303,6 @@ button {
 	font-weight: 600;
 	text-align: center;
 	margin-bottom: 3rem;
-}
-
-@media (min-width: 1217px) {
-	.explore {
-		margin-bottom: 10rem;
-	}
-}
-@media (max-height: 536) {
-	.explore {
-		margin-bottom: 10rem;
-	}
 }
 
 .exploreHeading,
@@ -410,23 +372,6 @@ button {
 	border-radius: 1rem;
 }
 
-@media (min-width: 1024px) {
-	.splideSlideText {
-		font-size: 1.75rem;
-	}
-	.splidwSlidePrice {
-		font-size: 1.25rem;
-	}
-}
-
-@media (max-width: 698px) {
-	.splideSlidePrice,
-	.splideSlideText {
-		font-size: 0.7rem;
-		padding: 0.2rem;
-	}
-}
-
 .exploreCategories {
 	display: flex;
 	justify-content: space-between;
@@ -472,33 +417,13 @@ button {
 }
 
 .categoryListingImg {
-	width: 30%;
-	height: 100px;
+	/* width: 30%; */
+	min-width: 400px;
+	margin-right: 50px;
+	/* height: 100px; */
 	border-radius: 1.5rem;
 	object-fit: fill;
 	box-shadow: var(--box-shadow);
-}
-
-@media (min-width: 1024px) {
-	.categoryListingImg {
-		width: 19%;
-		height: 217px;
-	}
-}
-
-@media (min-width: 769px) {
-	.exploreCategoryImg {
-		min-height: 300px;
-	}
-}
-
-.categoryListingDetails {
-	width: 65%;
-}
-@media (min-width: 1024px) {
-	.categoryListingDetails {
-		width: 79%;
-	}
 }
 
 .categoryListingLocation {
@@ -629,11 +554,6 @@ button {
 	height: 14rem;
 	overflow-x: hidden;
 	margin-bottom: 3rem;
-}
-@media (min-width: 1024px) {
-	.leafletContainer {
-		height: 33rem;
-	}
 }
 
 .linkCopied {
@@ -907,18 +827,6 @@ button {
 	box-shadow: var(--box-shadow);
 }
 
-@media (min-width: 1025px) {
-	.profileContainer {
-		margin: 14rem 14rem 0 14rem;
-	}
-}
-
-@media (max-width: 768px) {
-	.profileContainer {
-		margin: 0;
-	}
-}
-
 .offerBadge {
 	padding: 0.25rem 0.5rem;
 	background-color: var(--primary-color);
@@ -937,4 +845,108 @@ button {
 	font-size: 2rem;
 	color: var(--primary-color);
 	text-shadow: var(--text-shadow);
+}
+
+/* -----  MEDIA QUERY -----  */
+
+@media (min-width: 1217px) {
+	.explore {
+		margin-bottom: 10rem;
+	}
+}
+
+@media (min-width: 1100px) {
+	.input,
+	.passwordInput,
+	.emailInput,
+	.nameInput,
+	.textarea {
+		padding: 0 5rem;
+	}
+}
+
+@media (min-width: 1025px) {
+	.profileContainer {
+		margin: 14rem 14rem 0 14rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.pageContainer,
+	.offers,
+	.listingDetails,
+	.category,
+	.explore {
+		margin: 3rem;
+	}
+	.signInBar,
+	.signUpBar {
+		justify-content: start;
+	}
+	.signInButton,
+	.signUpButton {
+		margin-left: 3rem;
+	}
+	.splideSlideText {
+		font-size: 1.75rem;
+	}
+	.splidwSlidePrice {
+		font-size: 1.25rem;
+	}
+	.categoryListingDetails {
+		width: 79%;
+	}
+	.leafletContainer {
+		height: 33rem;
+	}
+	/* .categoryListingImg {
+		width: 19%;
+		height: 217px;
+	} */
+}
+
+@media (min-width: 769px) {
+	.exploreCategoryImg {
+		min-height: 300px;
+	}
+	.categoryListingImg {
+		/* width: 19%;
+		height: 217px; */
+		max-width: 200px;
+	}
+
+	.categoryListingDetails {
+		width: 65%;
+	}
+}
+@media (max-width: 798px) {
+	.splideSlidePrice,
+	.splideSlideText {
+		display: none;
+	}
+
+	.categoryListingImg {
+		/* width: 19%; */
+		/* max-width: 57px !important; */
+		/* height: auto; */
+		min-width: 150px;
+		/* height: 150px; */
+	}
+}
+
+@media (min-width: 698px) {
+	/* .splideSlidePrice,
+	.splideSlideText {
+		font-size: 0.7rem;
+		padding: 0.2rem;
+	} */
+	.profileContainer {
+		margin: 0;
+	}
+}
+
+@media (max-height: 536px) {
+	.explore {
+		margin-bottom: 10rem;
+	}
 }
