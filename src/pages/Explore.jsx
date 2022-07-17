@@ -34,6 +34,16 @@ const Explore = () => {
 							<p className='exploreCategoryName'>Places for sale</p>
 						</Link>
 					</div>
+					<div>
+						<hr />
+						<h4>
+							To be able to post your property you need to have an account.
+						</h4>
+						<h5>
+							Use: sample@gmail.com and password: 123456 if you don't want to
+							register but want to check out the functionality.
+						</h5>
+					</div>
 				</main>
 			</div>
 		</div>
