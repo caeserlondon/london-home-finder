@@ -2,7 +2,7 @@
 
 ### For listings properties for rent and sale. using Firebase database to store data and images and using Google Auth for authentication.
 
-#### Created using React V18.2.0 , react-router-dom V6.3.0 , react-leflet for maps , Firebase(Backend-as-a-Service (Baas)) and eact-toastify.
+#### Created using React V18.2.0 , react-router-dom V6.3.0 , react-leaflet for maps , Firebase(Backend-as-a-Service (Baas)) and react-toastify.
 
 ### Been deployed on Firebase at:
 
