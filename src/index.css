@@ -50,6 +50,13 @@ h3 {
 	color: var(--primary-color);
 	font-size: medium;
 }
+h4 {
+	color: var(--primary-color);
+	font-size: x-large;
+}
+h5 {
+	font-size: large;
+}
 
 button {
 	outline: none;
@@ -400,6 +407,7 @@ button {
 
 .categoryListing {
 	display: flex;
+	/* flex: 1; */
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
@@ -923,6 +931,14 @@ button {
 	.splideSlidePrice,
 	.splideSlideText {
 		display: none;
+	}
+
+	h4 {
+		color: var(--primary-color);
+		font-size: medium;
+	}
+	h5 {
+		font-size: small;
 	}
 
 	.categoryListingImg {
