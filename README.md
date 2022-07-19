@@ -6,7 +6,7 @@
 
 ### Been deployed on Firebase at:
 
-### https://caeser-london-home-finder.web.app/
+### https://london-home-finder.web.app/
 
 ![screeshot 1](./src/assets/jpg/Screenshot1.jpg)
 
