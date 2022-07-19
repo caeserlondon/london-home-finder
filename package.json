@@ -22,7 +22,8 @@
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"eject": "react-scripts eject",
+		"build:deploy": "env-cmd -f .env.local npm run build && firebase deploy -P london-home-finder"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -36,6 +37,7 @@
 		"not op_mini all"
 	],
 	"devDependencies": {
+		"env-cmd": "^10.1.0",
 		"firebase-tools": "^11.3.0"
 	}
 }
