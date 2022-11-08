@@ -1,41 +1,41 @@
-import { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import { getDoc, doc } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
-import { db } from '../firebase.config'
-import Spinner from '../components/Spinner'
-import shareIcon from '../assets/svg/shareIcon.svg'
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import { Splide, SplideSlide } from '@splidejs/react-splide'
-import '@splidejs/react-splide/css'
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
+import { getAuth } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import shareIcon from '../assets/svg/shareIcon.svg';
+import Spinner from '../components/Spinner';
+import { db } from '../firebase.config';
 
 // https://stackoverflow.com/questions/67552020/how-to-fix-error-failed-to-compile-node-modules-react-leaflet-core-esm-pat
 
 function Listing() {
-	const [listing, setListing] = useState(null)
-	const [loading, setLoading] = useState(true)
-	const [shareLinkCopied, setShareLinkCopied] = useState(false)
-	const navigate = useNavigate()
-	const params = useParams()
-	const auth = getAuth()
+	const [listing, setListing] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [shareLinkCopied, setShareLinkCopied] = useState(false);
+	const navigate = useNavigate();
+	const params = useParams();
+	const auth = getAuth();
 
 	useEffect(() => {
 		const fetchListing = async () => {
-			const docRef = doc(db, 'listings', params.listingId)
-			const docSnap = await getDoc(docRef)
+			const docRef = doc(db, 'listings', params.listingId);
+			const docSnap = await getDoc(docRef);
 
 			if (docSnap.exists()) {
 				// console.log(docSnap.data())
-				setListing(docSnap.data())
-				setLoading(false)
+				setListing(docSnap.data());
+				setLoading(false);
 			}
-		}
+		};
 
-		fetchListing()
-	}, [navigate, params.listingId])
+		fetchListing();
+	}, [navigate, params.listingId]);
 
 	if (loading) {
-		return <Spinner />
+		return <Spinner />;
 	}
 
 	return (
@@ -62,19 +62,19 @@ function Listing() {
 											<img src={url} alt='' className='splideSlideImg' />
 										</div>
 									</SplideSlide>
-								)
+								);
 							})}
 						</Splide>
 					</div>
 					<div
 						className='shareIconDiv'
 						onClick={() => {
-							navigator.clipboard.writeText(window.location.href)
-							setShareLinkCopied(true)
+							navigator.clipboard.writeText(window.location.href);
+							setShareLinkCopied(true);
 							// to allow time to display the "link copied"
 							setTimeout(() => {
-								setShareLinkCopied(false)
-							}, 2000)
+								setShareLinkCopied(false);
+							}, 2000);
 						}}
 					>
 						<img src={shareIcon} alt='share' className='shareIconImg' />
@@ -157,7 +157,7 @@ function Listing() {
 				</main>
 			</div>
 		</div>
-	)
+	);
 }
 
-export default Listing
+export default Listing;
